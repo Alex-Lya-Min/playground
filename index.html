@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Илья Криканов — Head of Design</title>
+<meta name="description" content="Портфолио Ильи Криканова: менеджмент, артдирекшн и продуктовый дизайн корпоративных платформ, дизайн-систем и мобильных приложений.">
+<link rel="icon" href="avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F3EF;--surface:#FFFFFF;--ink:#0E0E10;--body:#3B3B40;--muted:#76767C;--line:rgba(14,14,16,.12);
+  --blue:#1B35EB;--orange:#FF7A45;--paper:#FFFFFF;
+  --pad:40px;--max:1360px;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;font-size:17px;line-height:1.6;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--max);margin:0 auto}
+.sec{padding:120px var(--pad)}
+.label{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;font-size:12px;line-height:1.3;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.display{font-weight:500;font-size:136px;line-height:.95;letter-spacing:-.05em}
+.display-s{font-weight:500;font-size:88px;line-height:1;letter-spacing:-.045em}
+.h2{font-weight:500;font-size:56px;line-height:1;letter-spacing:-.04em}
+.h3{font-weight:500;font-size:32px;line-height:1.1;letter-spacing:-.03em}
+.lead{font-size:24px;line-height:1.35;letter-spacing:-.02em}
+.stat{font-weight:500;font-size:72px;line-height:1;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.body{color:var(--body)}
+.balance{text-wrap:balance}.pretty{text-wrap:pretty}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(243,243,239,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px var(--pad)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:12px;font-weight:500;font-size:15px}
+.brand img{width:36px;height:36px;border-radius:50%}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.2s ease-in-out infinite alternate}
+@keyframes pulse{to{opacity:.25}}
+.links{display:flex;align-items:center;gap:28px;font-weight:500;font-size:15px}
+.links a.l{color:var(--muted);transition:color .2s}.links a.l:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px 10px 18px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:500;font-size:15px;transition:background .2s}
+.btn:hover{background:var(--blue)}
+.ic{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* intro */
+.intro{padding:88px var(--pad) 72px}
+.intro .wrap{display:flex;flex-direction:column;gap:56px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.h1 span{display:block;overflow:hidden}
+.h1 span i{display:block;font-style:normal;transform:translateY(100%);filter:blur(10px);opacity:0;animation:rise 1s var(--ease) forwards}
+.h1 span:nth-child(2) i{animation-delay:.08s}.h1 span:nth-child(3) i{animation-delay:.16s}
+@keyframes rise{to{transform:none;filter:none;opacity:1}}
+.h1 b{color:var(--blue);font-weight:500}
+.intro-bottom{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end}
+.intro-bottom>*{flex:1 1 320px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.pill{border:1px solid rgba(14,14,16,.14);border-radius:999px;padding:8px 14px;color:var(--ink)}
+
+/* ticker */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden}
+.track{display:flex;gap:40px;align-items:center;width:max-content;animation:tick 40s linear infinite}
+.ticker:hover .track{animation-duration:100s}
+.track span.h3{white-space:nowrap;font-size:32px}
+.track i{width:10px;height:10px;border-radius:50%;background:var(--blue);flex:none}
+.track i:nth-of-type(2n){background:var(--orange)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* projects */
+.head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;margin-bottom:64px}
+.head .t{display:flex;gap:10px;align-items:flex-start}
+.head .t .label{color:var(--blue)}
+.feat{display:flex;flex-direction:column;gap:24px;margin-bottom:72px}
+.cover{position:relative;aspect-ratio:2.4;border-radius:28px;overflow:hidden;background:#222}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feat:hover .cover img{transform:scale(1.03)}
+.chip{position:absolute;top:24px;left:24px;display:flex;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.28)}
+.chip .label{color:#fff}
+.arrow{position:absolute;top:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--ink)}
+.arrow .ic{width:22px;height:22px}
+.meta{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:72px 24px}
+.card{display:flex;flex-direction:column;gap:20px;transition:transform .4s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.card .img{aspect-ratio:1.4;border-radius:24px;overflow:hidden;background:#ddd}
+.card .img img{width:100%;height:100%;object-fit:cover}
+.card .idx{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+.card .idx .label:first-child{color:var(--blue)}
+.card .h3{margin-bottom:10px}
+
+/* about */
+.white{background:var(--surface)}
+.split{display:flex;flex-wrap:wrap;gap:48px}
+.split>.side{flex:1 1 260px;display:flex;flex-direction:column;gap:24px}
+.split>.main{flex:2 1 320px;display:flex;flex-direction:column;gap:28px}
+.mark{width:96px;height:96px;border-radius:24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.st{background:var(--bg);border-radius:24px;padding:28px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.st p{color:var(--body);margin-bottom:10px}
+.st.accent{background:var(--blue);color:#fff}.st.accent p{color:rgba(255,255,255,.85)}.st.accent .label{color:rgba(255,255,255,.6)}
+
+/* expertise */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 24px;margin-top:64px}
+.area{border-top:1px solid var(--ink);padding-top:28px;display:flex;flex-direction:column;gap:20px}
+.area .icb{width:52px;height:52px;border-radius:50%;background:var(--surface);display:grid;place-items:center}
+.area .icb .ic{width:22px;height:22px;stroke-width:1.5}
+
+/* experience */
+.job{display:flex;flex-wrap:wrap;gap:24px;padding:28px 0;border-top:1px solid var(--line);align-items:flex-start}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job .p{width:200px}
+.job .c{flex:1 1 220px}
+.job .c .h3{font-size:32px;margin-bottom:6px}
+
+/* footer */
+footer{background:var(--ink);color:#fff;padding:120px var(--pad) 36px}
+footer .wrap{display:flex;flex-direction:column;gap:96px}
+footer .label{color:rgba(255,255,255,.5)}
+.soc{display:flex;flex-wrap:wrap;gap:16px}
+.soc a{display:inline-flex;align-items:center;gap:14px;padding:18px 26px;border-radius:999px;border:1px solid rgba(255,255,255,.2);transition:background .2s}
+.soc a:hover{background:rgba(255,255,255,.08)}
+.soc .ic{width:24px;height:24px}
+.fb{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+
+/* case page */
+.case-head{padding:56px var(--pad) 48px}
+.case-head .wrap{display:flex;flex-direction:column;gap:40px}
+.back{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;width:max-content;transition:transform .3s var(--ease)}
+.back:hover{transform:translateX(-4px)}
+.cmeta{display:flex;align-items:center;gap:16px}.cmeta .label:first-child{color:var(--blue)}.cmeta hr{width:24px;border:0;border-top:1px solid var(--line)}
+.ccover{padding:0 var(--pad)}
+.ccover .cover{max-width:var(--max);margin:0 auto}
+.info{padding:80px var(--pad) 40px}
+.info .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.info .col{border-top:1px solid var(--ink);padding-top:20px;display:flex;flex-direction:column;gap:14px}
+.info .col p{color:var(--body)}
+.cbody{padding:40px var(--pad) 120px}
+.cbody .inner{max-width:960px;margin:0 auto}
+.cbody h2{font-weight:500;font-size:36px;line-height:1.1;letter-spacing:-.035em;margin:64px 0 20px}
+.cbody p{font-size:19px;line-height:1.6;letter-spacing:-.01em;color:var(--body);margin-bottom:20px}
+.cbody figure{margin:32px 0}
+.cbody figure img{width:100%;border-radius:20px}
+.cbody .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.cbody .pair figure{margin:0}
+.next{padding:0 var(--pad) 120px}
+.next a{max-width:var(--max);margin:0 auto;border-top:1px solid var(--ink);padding-top:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:transform .4s var(--ease)}
+.next a:hover{transform:translateX(8px)}
+.next .circle{width:72px;height:72px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+.next .circle .ic{width:28px;height:28px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}.h1 span i{animation:none;opacity:1;transform:none;filter:none}}
+
+/* tablet */
+@media (max-width:1199.98px){
+  .display{font-size:88px}.display-s{font-size:60px}.h2{font-size:44px}.h3{font-size:26px}.lead{font-size:21px}.stat{font-size:56px}
+  .stats,.areas{grid-template-columns:repeat(2,1fr)}
+  .cbody h2{font-size:30px}.cbody p{font-size:18px}
+}
+/* phone */
+@media (max-width:809.98px){
+  :root{--pad:16px}
+  .display{font-size:52px}.display-s{font-size:40px}.h2{font-size:34px}.h3,.job .c .h3{font-size:24px}.lead{font-size:19px}.stat{font-size:48px}
+  .sec{padding:80px var(--pad)}
+  nav{padding:12px var(--pad)}.links a.l{display:none}.btn{padding:9px 14px 9px 16px}
+  .intro{padding:40px var(--pad) 48px}.intro .wrap{gap:40px}.intro .loc{display:none}.intro-bottom{gap:28px}.tags{justify-content:flex-start}
+  .track span.h3{font-size:24px}
+  .head{margin-bottom:40px}.feat{margin-bottom:56px}
+  .feat .cover{aspect-ratio:1.1;border-radius:20px}.chip{top:14px;left:14px}.arrow{top:14px;right:14px;width:44px;height:44px}
+  .grid{grid-template-columns:1fr;gap:56px}.card .img{border-radius:20px}
+  .stats{grid-template-columns:1fr;gap:12px;margin-top:40px}.st{min-height:200px;padding:24px}
+  .areas{grid-template-columns:1fr;margin-top:40px}
+  .job{gap:12px;padding:24px 0}.job .p{width:100%}
+  footer{padding:80px var(--pad) 24px}footer .wrap{gap:56px}.soc a{padding:14px 20px}.fb{flex-direction:column}
+  .case-head{padding:32px var(--pad)}.case-head .wrap{gap:28px}
+  .ccover .cover{aspect-ratio:1.3;border-radius:20px}
+  .info{padding:48px var(--pad) 24px}.info .wrap{grid-template-columns:1fr;gap:32px}
+  .cbody{padding:24px var(--pad) 80px}.cbody h2{font-size:26px;margin-top:48px}.cbody p{font-size:17px}.cbody .pair{grid-template-columns:1fr}
+  .next{padding:0 var(--pad) 80px}.next .circle{width:52px;height:52px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-ur" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-l" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.56-2.5 5.56-5.55C21.97 6.01 17.46 2 12 2z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+  <symbol id="i-comp" viewBox="0 0 24 24"><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5z"/><path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2z"/><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5z"/><path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15z"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="avatar.png" alt="">Илья Криканов<span class="dot"></span></a>
+    <div class="links">
+      <a class="l" href="#" data-scroll="projects">Проекты</a>
+      <a class="l" href="#" data-scroll="about">Обо мне</a>
+      <a class="l" href="#" data-scroll="experience">Опыт</a>
+      <a class="btn" href="https://www.linkedin.com/in/ilya-krikanov-b6892386/" target="_blank" rel="noopener">Связаться<svg class="ic"><use href="#i-ur"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <p class="label">Контакты</p>
+      <h2 class="display-s balance" style="max-width:1100px">Есть продукт, команда или сложная задача? Давайте обсудим.</h2>
+    </div>
+    <div class="soc">
+      <a href="https://t.me/" target="_blank" rel="noopener"><span class="h3">Telegram</span><svg class="ic"><use href="#i-ur"/></svg></a>
+      <a href="https://www.linkedin.com/in/ilya-krikanov-b6892386/" target="_blank" rel="noopener"><span class="h3">LinkedIn</span><svg class="ic"><use href="#i-ur"/></svg></a>
+    </div>
+    <div class="fb"><span class="label">© 2026 Илья Криканов</span><span class="label">Менеджмент · Артдирекшн · Дизайн</span></div>
+  </div>
+</footer>
+
+<script>
+const P = [
+ { slug:"sfera", title:"Sfera", num:"01", sub:"Платформа для разработки ИТ-продуктов", tags:"Management • UX/UI • Product design • Web", type:"Enterprise-платформа", cover:"sfera_hero", prev:"sfera_2", link:"sferaplatform.ru",
+   about:"Сфера — платформа производства ИТ-продуктов. Её задача — заменить ушедшие с рынка инструменты (Jira, Confluence, Bitbucket и другие) для разработки продуктов и мониторинга эффективности систем и процессов.",
+   result:"Экосистема с едиными паттернами для 40+ продуктов. Квартальный рост UMUX и SCAT около 10%. Дизайн-система закрывает 87% потребностей продуктов. Платформу внедрили Т1, ВТБ, Почта Банк, Почта России, Росгосстрах и VK Tech.",
+   body:[["img","sfera_1"],["img","sfera_2"],["h2","Почему платформа"],["p","Рынок запросил импортозамещение. В крупных продуктах появилась потребность заменить большие функциональные области, чтобы сохранить сложившийся производственный подход."],["h2","Требования"],["p","Замещаемые продукты содержат много данных, а в платформу входит больше 40 продуктов. Поэтому платформа должна давать разнообразие в отображении информации, быструю и прозрачную навигацию и отсутствие проблем в основных сценариях даже при сильной нагрузке данными."],["p","На ранних этапах опирались на бенчмаркинг, позже фокус сместился на работу с данными. Мы сократили расстояния между элементами, чтобы уместить больше информации на экране, и заменили шрифт: по исследованиям около 70% пользователей уменьшают масштаб на 10–15%, и нужен был шрифт, который не теряет читабельность."],["img","sfera_3"],["h2","Дизайн"],["p","Сфера — экосистема, поэтому формировать решения только на основе конкурентов нельзя. Дизайн учитывает и анализ конкурентов, и UX/UI всей экосистемы. Для понятного перемещения между продуктами появились навигация и модули, которые позволяют делать ответвления от сценария, не разрывая его. Для быстрого обзора больших данных — сжатые отступы и повышенные требования к контрасту."],["h2","Навигация"],["p","Пользователь перемещается на двух уровнях: между продуктами платформы и между модулями продукта. Ко второму уровню обращаются чаще. Анализ основных действий по продуктам дал перечень сквозного функционала и понимание объёма вложенности. Готовое решение мы проверили исследованием."],["img","sfera_4"],["h2","Информационные модули"],["p","Модули снижают вложенность продуктов: делят её на шаги или позволяют что-то уточнить, не уводя со сценария. Их применение чётко регламентировано: создание объекта, редактирование объекта и просмотр детализации без ухода со страницы."],["h2","Эмоциональная среда"],["p","Важно сохранять ощущение дружелюбной и эмоциональной среды. Это помогает дольше держать концентрацию и допускать меньше ошибок. Иконографика и иллюстрации стали частью этой среды."],["img","sfera_icons"],["img","sfera_illu"],["h2","Синхронизация"],["p","Сфера — высоконагруженный B2B-продукт: работа в нём может занимать до 50% рабочего времени, а пользователь постоянно переключается между 3–4 продуктами. Предсказуемость системы напрямую влияет на скорость и качество работы, поэтому платформа использует единые компоненты и синхронизацию на уровне паттернов."],["p","Анализ выявил переиспользуемые паттерны: время на дизайн-задачи сократилось на 70%, time-to-market — на 20%. Паттерны объединены в группы для централизованного развития."],["img","sfera_5"],["h2","Процессы"],["p","Экосистеме нужна среда, в которой она возможна: формирование, распространение, поддержка и влияние. Мы выстроили общее ревью, где дизайн подтверждает переиспользуемость паттернов, и каналы для распространения обновлений. Подход похож на open source: дизайнеры продуктовых команд выделяют часть капасити на паттерны. Это увеличило объём проработки на 10%."],["p","Исследования реорганизовали под малые ресурсы и большую потребность: их валидирует команда исследователей, но 70% исследований проводят сами дизайнеры. Приоритетные задачи платформы передаются командам через квартальное планирование."]]},
+ { slug:"sfera-mobile", title:"Sfera mobile", num:"02", sub:"Мобильное приложение платформы", tags:"UX/UI • Product design • Mobile", type:"Мобильное приложение", cover:"sm_hero", prev:"sm_1", link:"RuStore",
+   about:"Сфера — платформа производства ИТ-продуктов, которая заменяет ушедшие с рынка инструменты для разработки и мониторинга. Мобильное приложение — её спутник для постоянного доступа к работе.",
+   result:"Мобильное приложение для экосистемы с едиными паттернами для 40+ продуктов. Функционал намеренно усечён: для постоянного доступа нужен мониторинг, а не полноценная работа.",
+   body:[["img","sm_1"],["img","sm_2"],["h2","Требования"],["p","Приложение не основной рабочий канал, и некоторые функции в нём отсутствуют по соображениям безопасности. Опыт мобильной платформы не копирует веб: у них разный контекст использования и форм-фактор."],["h2","Дизайн"],["p","Сначала сформировали приоритеты по действиям: собрали и классифицировали их, затем ранжировали по частоте запросов. Стало понятно, какие действия совершаются чаще всего."],["p","Для бенчмаркинга смотрели на суперапы не только конкурентов, но и крупных платформ из e-com и финтеха: как продукты масштабируются и как строятся пути между ними. Выбрали приоритет обвязки платформы над подстройкой под отдельный продукт — это сохраняет консистентность и не увеличивает сроки разработки."],["img","sm_3"],["h2","Главная страница"],["p","Исследуя навигацию веб-версии, мы увидели потребность в точке входа в рабочий день. Главный экран показывает статус задач пользователя и даёт быстро перейти к своим задачам и задачам связанных команд."],["img","sm_4"],["h2","Разделы продуктов"],["p","Разделы построены на общих принципах навигации и поведения, выявленных при анализе продуктов платформы. Контент собирается из готовых блоков, во многом повторяющих подход веб-канала."],["img","sm_5"]]},
+ { slug:"vtb-cloud", title:"VTB Cloud", num:"03", sub:"Гибридная облачная платформа", tags:"Brand • UX/UI • Product design • Web", type:"Портал и личный кабинет", cover:"vtb_hero", prev:"vtb_1", link:"",
+   about:"Гибридная облачная платформа для команд разработки и ИТ-сопровождения инфраструктуры. Она позволяет масштабировать вычислительные ресурсы за пределы контура организации.",
+   result:"Портал сервисного провайдера и личный кабинет.",
+   body:[["img","vtb_1"],["h2","Управление платформой"],["p","Знакомство с продуктами и управление ими происходят из одного места. У каждого продукта собственное лицо, чтобы функционал разных продуктов было проще воспринимать."],["img","vtb_2"],["h2","Контент"],["p","Контент строился с учётом двух ролей: профессиональных пользователей и новичков, которые собирают решения для бизнеса. Первым контент подаётся с техническими деталями для оценки возможностей платформы, вторым — только самое значимое."],["pair","vtb_card","vtb_photo1"],["img","vtb_3"],["h2","Фотостиль"],["p","Платформа даёт широкий спектр возможностей — эта идея заложена в фирменный стиль. Она перенесена и в фотостиль: аберрации на монохромном фоне говорят о дополнительных возможностях, как дополнительные цвета на чёрно-белой фотографии."],["half","vtb_photo2"],["h2","Личный кабинет"],["p","Управление платформой доступно через личный кабинет. В него можно попасть с портала: здесь отслеживают состояние подключённых продуктов, подключают новые и настраивают существующие."],["img","vtb_4"]]},
+ { slug:"kuulklever", title:"КуулКлевер", num:"04", sub:"Сеть магазинов здорового питания", tags:"UX/UI • Product design • Mobile", type:"Мобильное приложение", cover:"kk_hero", prev:"kk_1", link:"App Store · Google Play",
+   about:"Чтобы повысить лояльность и объединить несколько брендов под одним, компании нужен был переход к омниканальной платформе.",
+   result:"Редизайн мобильного приложения.",
+   body:[["img","kk_1"],["img","kk_2"],["h2","Омниканальная платформа"],["p","Прошлую структуру полностью пересмотрели. С главной стали доступны статус заказов, бейдж покупателя, история заказов и основные акции. Мы объединили каталоги двух сетей, «Мясновъ» и «Отдохни»: это около 250 магазинов, 7 производств и 24 страны-поставщика."],["img","kk_3"],["img","kk_4"],["h2","Результат"],["p","Приложение отразило ценности компании в рамках масштабного ребрендинга и стало ключевым инструментом коммуникации с пользователями."],["img","kk_5"]]},
+ { slug:"admiral", title:"Адмирал", num:"05", sub:"Сайт дизайн-системы", tags:"Brand • UX/UI", type:"Дизайн-система", cover:"ad_hero", prev:"ad_1", link:"",
+   about:"Адмирал — дизайн-система для корпоративных продуктов с поддержкой темизации и набором простых компонентов. С ней старт нового решения заметно быстрее: time-to-market сокращается до 30%. Но не все команды знали о дизайн-системе и её возможностях.",
+   result:"Сайт дизайн-системы.",
+   body:[["h2","Идея"],["p","Дизайн-система как вода: адаптивная, гибкая и изменчивая. Она всегда приспосабливается к текущему ландшафту. Поэтому в основе образ воды, только графически переработанный."],["img","ad_1"],["img","ad_2"],["h2","Выбор решения"],["p","Изначально решение должно было быть классическим демо-стендом. Но глубинные интервью показали: дизайнерам нужно описание, а разработчикам — Storybook. Поэтому сделали сайт, который рассказывает о дизайн-системе и ведёт либо в описание, либо в Storybook."],["h2","Роли"],["p","В выборе дизайн-системы участвуют несколько сторон: их интересуют польза для пользователя, код и бизнес-преимущества. Мы выделили три роли, для которых формировался контент: дизайнеры, разработчики и бизнес."],["img","ad_3"],["p","Единая дизайн-система должна давать возможности, а не ограничения. Адмирал даёт основные инструменты, с помощью которых продукт получает уникальный вид: широкую свободу в цвете, шрифте и визуале UI-элементов."],["img","ad_4"],["pair","ad_half1","ad_half2"],["h2","Взаимодействие"],["p","На сайте можно протестировать темизацию и поработать с рядом функциональных элементов."],["img","ad_5"]]}
+];
+const JOBS = [["Апр 2023 — сейчас","Т1","Design Team Lead","Design Management · Design Lead"],["Июл 2022 — Апр 2023","Иннотех","Design Team Lead","UI/UX · Design Lead"],["Фев 2020 — Июл 2022","Банк ВТБ","Design Team Lead","Brand Design · User Experience"],["Дек 2018 — Фев 2020","Газпромбанк","Senior Product Designer / Design Team Lead","User Experience · Art Direction"],["Дек 2017 — Дек 2018","Articul Group","Senior Product Designer","Art Direction · User Experience"]];
+const img = n => `${n}.webp`;
+const ic = (id, cls="ic") => `<svg class="${cls}"><use href="#i-${id}"/></svg>`;
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function home(){
+  const [f, ...rest] = P;
+  const names = ["Sfera","Т1","VTB Cloud","Банк ВТБ","Иннотех","Газпромбанк","КуулКлевер","Адмирал","Articul Group"];
+  const tick = names.map(n=>`<span class="h3">${n}</span><i></i>`).join("");
+  return `
+<section class="intro"><div class="wrap">
+  <div class="row"><p class="label">Head of Design · Design Manager · Design Lead</p><p class="label loc">Москва</p></div>
+  <h1 class="display h1"><span><i>Менеджмент</i></span><span><i>Артдирекшн</i></span><span><i>Дизайн<b>.</b></i></span></h1>
+  <div class="intro-bottom">
+    <p class="lead pretty rv" style="max-width:680px">Илья Криканов — руководитель дизайна в Т1. Брендинг, digital и продуктовый дизайн корпоративных платформ, дизайн-систем и мобильных приложений.</p>
+    <div class="tags rv">${["Brand","UX/UI","Product design","Web","Mobile"].map(t=>`<span class="pill label">${t}</span>`).join("")}</div>
+  </div>
+</div></section>
+<div class="ticker" aria-hidden="true"><div class="track">${tick}${tick}</div></div>
+<section class="sec" id="projects"><div class="wrap">
+  <div class="head rv"><div class="t"><h2 class="h2">Избранные проекты</h2><span class="label">(05)</span></div><p class="body" style="max-width:420px">Платформы для enterprise, финтех и ритейл. От навигации экосистемы до фотостиля.</p></div>
+  <a class="feat rv" href="#${f.slug}">
+    <div class="cover"><img src="${img(f.cover)}" alt="${f.title}"><div class="chip"><span class="label">${f.num}</span><span class="label">${f.type}</span></div><div class="arrow">${ic("ur")}</div></div>
+    <div class="meta"><div><h3 class="h2" style="margin-bottom:8px">${f.title}</h3><p class="body">${f.sub}</p></div><p class="label">${f.tags}</p></div>
+  </a>
+  <div class="grid">${rest.map(p=>`
+    <a class="card rv" href="#${p.slug}"><div class="img"><img loading="lazy" src="${img(p.prev)}" alt="${p.title}"></div>
+      <div><div class="idx"><span class="label">${p.num}</span><span class="label">${p.tags}</span></div><h3 class="h3">${p.title}</h3><p class="body">${p.sub}</p></div></a>`).join("")}
+  </div>
+</div></section>
+<section class="sec white" id="about"><div class="wrap">
+  <div class="split">
+    <div class="side rv"><p class="label">Обо мне</p><img class="mark" src="mark.png" alt=""></div>
+    <div class="main rv">
+      <h2 class="h2 balance">За годы в индустрии накопил экспертизу в дизайне — от брендинга до digital и продуктового дизайна.</h2>
+      <p class="lead body pretty">Верю в коммуникацию и сотрудничество внутри команды: именно они поднимают качество работы на новый уровень и сокращают time to market.</p>
+      <p class="body pretty" style="max-width:760px">Сейчас руковожу дизайн-командой в Т1. До этого — Иннотех, Банк ВТБ, Газпромбанк и Articul Group. Работаю на стыке менеджмента, артдирекшна и продуктового дизайна: собираю команды и процессы, задаю визуальный язык и проектирую сложные интерфейсы для web и mobile.</p>
+    </div>
+  </div>
+  <div class="stats">${[["40+","продуктов в экосистеме на единых паттернах","Sfera"],["87%","потребностей продуктов закрывает дизайн-система","Sfera"],["−70%","времени на дизайн-задачи за счёт паттернов","Sfera"],["−30%","time to market с дизайн-системой","Адмирал"]].map((s,i)=>`
+    <div class="st rv ${i==0?"accent":""}" style="transition-delay:${i*.08}s"><span class="stat">${s[0]}</span><div><p>${s[1]}</p><span class="label">${s[2]}</span></div></div>`).join("")}</div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <h2 class="h2 rv">Чем занимаюсь</h2>
+  <div class="areas">${[["users","Менеджмент","Собираю и развиваю дизайн-команды, выстраиваю ревью, планирование и связку с разработкой."],["palette","Артдирекшн","Задаю визуальный язык продукта и бренда: фотостиль, иллюстрации, иконографика, эмоциональная среда."],["layers","Продуктовый дизайн","Исследования, сценарии и интерфейсы для web и mobile — от бенчмаркинга до проверенных решений."],["comp","Дизайн-системы","Паттерны, компоненты и темизация, которые ускоряют дизайн и вывод продукта на рынок."]].map((a,i)=>`
+    <div class="area rv" style="transition-delay:${i*.08}s"><div class="icb">${ic(a[0])}</div><h3 class="h3">${a[1]}</h3><p class="body pretty">${a[2]}</p></div>`).join("")}</div>
+</div></section>
+<section class="sec white" id="experience" style="padding-bottom:140px"><div class="wrap">
+  <div class="split">
+    <div class="side rv" style="gap:16px"><h2 class="h2">Опыт</h2><p class="body" style="max-width:320px">Больше восьми лет в продуктовом дизайне — от senior-дизайнера до руководителя команды.</p></div>
+    <div class="main" style="gap:0">${JOBS.map(j=>`
+      <div class="job rv"><span class="label p">${j[0]}</span><div class="c"><h3 class="h3">${j[1]}</h3><p class="body">${j[2]}</p></div><span class="label">${j[3]}</span></div>`).join("")}
+      <div class="job rv"><span class="label p">Образование</span><div class="c"><h3 class="h3">Московская открытая социальная академия</h3><p class="body">Дизайн интерьера</p></div></div>
+    </div>
+  </div>
+</div></section>`;
+}
+
+function project(p){
+  const i = P.indexOf(p), nx = P[i+1];
+  const fig = n => `<figure><img loading="lazy" src="${img(n)}" alt="${p.title}"></figure>`;
+  const body = p.body.map(b => b[0]=="img" ? fig(b[1]) : b[0]=="pair" ? `<div class="pair">${fig(b[1])}${fig(b[2])}</div>` : b[0]=="half" ? `<div class="pair">${fig(b[1])}</div>` : `<${b[0]}>${esc(b[1])}</${b[0]}>`).join("");
+  return `
+<section class="case-head"><div class="wrap">
+  <a class="back" href="#" data-scroll="projects">${ic("l")}Все проекты</a>
+  <div class="cmeta"><span class="label">${p.num}</span><hr><span class="label">${p.type}</span></div>
+  <div style="display:flex;flex-direction:column;gap:20px"><h1 class="display h1"><span><i>${p.title}</i></span></h1><p class="lead body">${p.sub}</p></div>
+</div></section>
+<div class="ccover"><div class="cover rv in"><img src="${img(p.cover)}" alt="${p.title}"></div></div>
+<section class="info"><div class="wrap">
+  <div class="col rv"><p class="label">О проекте</p><p>${p.about}</p></div>
+  <div class="col rv"><p class="label">Результат</p><p>${p.result}</p></div>
+  <div class="col rv"><p class="label">Дисциплины</p><p>${p.tags}</p>${p.link?`<p class="label" style="margin-top:12px">Где посмотреть</p><p style="color:var(--ink)">${p.link}</p>`:""}</div>
+</div></section>
+<section class="cbody"><div class="inner">${body}</div></section>
+<section class="next">${nx
+  ? `<a href="#${nx.slug}"><div style="display:flex;flex-direction:column;gap:14px"><span class="label">Следующий проект</span><span class="display-s">${nx.title}</span></div><span class="circle">${ic("r")}</span></a>`
+  : `<a href="#" data-scroll="projects"><div style="display:flex;flex-direction:column;gap:14px"><span class="label">Это последний кейс</span><span class="display-s">Все проекты</span></div><span class="circle">${ic("ur")}</span></a>`}
+</section>`;
+}
+
+const app = document.getElementById("app");
+let io;
+function observe(){
+  io && io.disconnect();
+  io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target) } }), { threshold: .15 });
+  document.querySelectorAll(".rv:not(.in)").forEach(el => io.observe(el));
+}
+function render(){
+  const h = location.hash.slice(1);
+  const p = P.find(x => x.slug === h);
+  const sections = ["projects","about","experience"];
+  if (p) { app.innerHTML = project(p); document.title = `${p.title} — Илья Криканов`; window.scrollTo(0,0) }
+  else {
+    if (!app.querySelector("#projects")) app.innerHTML = home();
+    document.title = "Илья Криканов — Head of Design";
+    if (sections.includes(h)) document.getElementById(h).scrollIntoView({ behavior: "smooth" });
+    else if (!h) window.scrollTo(0,0);
+  }
+  observe();
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-scroll]"); if (!a) return;
+  e.preventDefault(); const id = a.dataset.scroll;
+  if (!app.querySelector("#"+id)) { app.innerHTML = home(); observe() }
+  history.replaceState(null, "", "#" + id);
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+});
+window.addEventListener("hashchange", render);
+render();
+</script>
+</body>
+</html>
